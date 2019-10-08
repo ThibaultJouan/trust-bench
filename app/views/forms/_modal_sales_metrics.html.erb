@@ -1,0 +1,79 @@
+<div style="width:1000px;" class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header justify-content-end pt-0 pb-0">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body text-center pt-0 pb-0">
+      <h3>Approche ventes</h3>
+      <h4>Saisie des metrics (2/3)</h4>
+      <div class="progress-item">
+        <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 33.3333%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>33%</span></div>
+        </div>
+      </div>
+      <div class="row" style="overflow: hidden; height: 300px;">
+        <div class="col-4">
+          <div class = "mt-4">
+            <%= f.label "Chiffre d'affaires (M€):"%>
+            <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :ca_globale, class:"form-control", :tabindex => 1 %>
+          </div>
+          <div>
+            <%= f.label "Coût Marketing & Com (M€):" %>
+            <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale marketing, le marketing digital, les outils, l'analytics ainsi que les diverses études marketing.">
+              <i class="m-0 far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :marketing, class:"form-control", :tabindex => 4  %>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class = "mt-4">
+            <%= f.label "Cout marketing digital (M€):" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Inclus les coûts Finance, Informatiques, Marketing, RH, Juridique, de Management ainsi que les coûts commerciaux.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :marketing_digital, class:"form-control", :tabindex => 2  %>
+          </div>
+          <div>
+            <%= f.label "Cout fonction commerciale (M€):" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond aux CapEx et OpEx (hors amortissements) de l'ensemble des SI.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :fonction_commerciale, class:"form-control", :tabindex => 5  %>
+          </div>
+          <div>
+            <%= f.label "Centre de service partage:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :centre_service, class:"form-control", :tabindex => 7  %>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class = "mt-4">
+            <%= f.label "Nombre d'ETP vendeurs sedentaires" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond au SG&A desquels les coûts commerciaux ont été soustrait.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :nombre_etp_sedentaires, class:"form-control", :tabindex => 3  %>
+          </div>
+          <div>
+            <%= f.label "Nombre d'ETP vendeurs terrains:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ETPs RH internes et externes.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :nombre_etp_terrain, class:"form-control", :tabindex => 6  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer pt-2 pb-2">
+        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modalSalesStep3">Etape suivante</button>
+      </div>
+    </div>
+  </div>
+</div>
+

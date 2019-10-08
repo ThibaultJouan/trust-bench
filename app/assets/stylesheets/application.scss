@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require vendor
+ *= require assets/style
+ *= require_tree .
+ *= require_self
+ */
+
+ .Divalert {
+  position: absolute;	
+}
+
+.Divalert {
+  opacity: 0.70;
+  width: 30%;
+  margin-top: 5%;
+  position: fixed;
+  top: 0;
+  left: 65%;
+  z-index: 900;
+}
+
+.qm-color {
+  color: #C6C6C6;
+  background-color: #FFFFFF;
+}
+
+::placeholder {
+  font-size: 1em;
+}
+
+.bg-argon {
+  background-image: image-url('argon-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fas {
+  color: #333333;
+}
+
+.modal-width-1 {
+  width: 500px;
+}
+
+.modal-width-2 {
+  width: 1000px;
+}
+
+.overflow {
+  overflow: hidden;
+  height: 300px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .modal-width-1 {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .modal-width-2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .modal-height {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .overflow {
+    overflow: scroll;
+    height: 100%;
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+

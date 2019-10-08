@@ -1,0 +1,117 @@
+<!-- En-tête -->
+<header class="header-light" style="background-color:#333333;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand scroll-smooth-fast" href="#scroll-CTA">
+        <%= image_tag "argon-header.jpg", class: "navbar-logo navbar-logo-light" %>
+        <%= image_tag "argon-header.jpg", class: "navbar-logo navbar-logo-dark" %>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center mr-auto">
+          <% if !user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+            </li>          
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Se déconnecter", destroy_user_session_path, method: "delete", class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- En-tête -->
+
+<!-- Export section -->
+<section class="bg-argon pt-5">
+  <div class="row align-items-center justify-content-between py-5 py-md-10">
+    <div class="col-2">
+    </div>
+    <div class="col-8 text-center">
+      <h1 class="display-3" style="color: #fff; background-color:#f18e00">Interface administrateur</h1>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+  <div class="container">
+    <div class="tab-content" id="component-1">
+      <div class="tab-pane show active" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
+        <div class="row gutter-2 d-flex justify-content-center">
+          <div class="col-4">
+            <div class="card card-price" style="height:450px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <i class="svg-icon w-50 equal">
+                    <%= image_tag "admin-data.svg", style:'width:100%;'%>
+                  </i>
+                </div>
+                <h5 class="card-title">Historique des données saisies par les prospects</h5>
+                <hr class="m-0">
+              </div>
+              <div class="d-flex justify-content-center mb-2">
+                <% if user_signed_in? && current_user.is_admin %>
+                  <%= link_to "Exporter en CSV", admin_index_path(:extract => "collect", format: "csv"), style:'width:50%;', class: "btn btn-primary" %>
+                <% else %>
+                  <%= link_to "Exporter en CSV", new_user_session_path, style:'width:50%;', class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card card-price" style="height:450px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <i class="svg-icon w-50 equal">
+                    <%= image_tag "admin-bench.svg", style:'width:100%;'%>
+                  </i>
+                </div>
+                <h5 class="card-title">Données du benchmark actuel</h5>
+                <hr class="m-0">
+              </div>
+              <div class="d-flex justify-content-center mb-2">
+                <% if user_signed_in? && current_user.is_admin %>
+                  <%= link_to "Exporter en CSV", admin_index_path(:extract => "bench", format: "csv"), style:'width:50%;', class: "btn btn-primary" %>
+                <% else %>
+                  <%= link_to "Exporter en CSV", new_user_session_path, style:'width:50%;', class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card card-price" style="height:450px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <i class="svg-icon w-50 equal">
+                    <%= image_tag "admin-upload.svg", style:'width:100%;'%>
+                  </i>
+                </div>
+                <h5 class="card-title">Mettre à jour le benchmark</h5>
+                <% if !user_signed_in? %>
+                  <hr class="m-0">
+                <% end %>
+              </div>
+              <div>              
+                <% if user_signed_in? && current_user.is_admin %>
+                  <%= form_for :bench, :url => admin_index_path do |f| %>
+                    <div class="pl-4 mb-2">
+                      <%= f.file_field :file, class: 'form-control-file', required: true %>
+                    </div>
+                    <div class="d-flex justify-content-center mb-2">
+                      <%= f.submit "Importer un CSV", class: 'btn btn-primary' %>
+                    </div>
+                  <% end %>
+                <% else %>
+                <div class="d-flex justify-content-center mb-2">
+                  <%= link_to "Importer en CSV", new_user_session_path, style:'width:50%;', class: "btn btn-primary" %>
+                </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

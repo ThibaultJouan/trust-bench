@@ -1,0 +1,185 @@
+<!-- En-tête -->
+<header class="header-light fixed" style="background-color:#333333;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand scroll-smooth-fast" href="#scroll-CTA">
+        <%= image_tag "argon-header.jpg", class: "navbar-logo navbar-logo-light" %>
+        <%= image_tag "argon-header.jpg", class: "navbar-logo navbar-logo-dark" %>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center mr-auto">
+          <li class="nav-item">
+            <a class="nav-link scroll-smooth-fast" href="#scroll-value" role="button">
+              Valeur ajoutée
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scroll-smooth-fast" href="#scroll-benchmark" role="button">
+              Demande de benchmark
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- En-tête -->
+
+<!-- CTA -->
+<section class="p-0 pt-10 pb-10 bg-argon" id="scroll-CTA">
+  <div class="container">
+    <div class="row align-items-center justify-content-between py-5 py-md-10">
+      <div class="col-12 text-center text-lg-left">
+        <h1 class="display-3" style="color: #fff; background-color:#f18e00">Trust&Bench: <br> Votre benchmark personnalisé et gratuit</h1>
+        <div class="input-group mb-1">
+            <a class="btn btn-secondary scroll-smooth-fast" role="button" href="#scroll-benchmark">Je demande mon benchmark</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CTA -->
+
+<!-- Valeur ajoutée du service -->
+<section class="bg-white pt-5 pb-5" id="scroll-value">
+  <div>
+  <h2 class="text-decorate text-center mb-5 pr-2 pl-2" style="color:#3A3C4A;">Trust&Bench apporte un éclairage précieux sur les leviers d'optimisation à activer</h2>
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <i class="fas fa-brain fs-50 mb-1"></i>
+          <h3 class="text-uppercase font-weight-normal fs-18 mt-2"><strong style="color:#F18e00;">L'expertise métier d'un cabinet de conseil reconnu</strong></h3>
+          <p>Trust&Bench est un service proposé par Argon Consulting, cabinet leader des opérations</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-database fs-50 mb-1 "></i>
+          <h3 class="text-uppercase font-weight-normal fs-18 mt-2"><strong style="color:#F18e00;">Une base de données large et actualisée</strong></h3>
+          <p>En près de 20 ans d'existence, Argon a pu constituer une base de données solide</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-chart-line fs-50 mb-1 "></i>
+          <h3 class="text-uppercase font-weight-normal fs-18 mt-2"><strong style="color:#F18e00;">Une proposition d'accompagnement au plus juste</strong></h3>
+          <p>Le benchmark permet un diagnostic clair et rapide des principaux leviers d'optimisation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Valeur ajoutée du service -->
+
+<!-- Benchmark -->
+<section class="bg-primary pt-5 pb-5" id="scroll-benchmark">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-8">
+              <h2 class="display-3 mb-1" style="color: #fff;">Je demande mon benchmark gratuitement</h2>
+              <h5 style="color: #fff;">Veuillez tout d'abord choisir le périmètre fonctionnel de l'analyse:</h5>
+              <div class="input-group mt-2">
+                <div style="width:60%; background-color:#fff;">
+                  <select id="mySelect" onchange="selectedApproach()">
+                    <option value="Default">Choisir un périmètre</option>
+                    <option value="Global"><%= @approaches.find(1).label %></option>
+                    <option value="Finance"><%= @approaches.find(2).label %></option>
+                    <option value="HR"><%= @approaches.find(3).label %></option>
+                    <option value="IT"><%= @approaches.find(4).label %></option>
+                    <option value="Sales"><%= @approaches.find(5).label %></option>
+                  </select>
+                </div>
+                <button type="button" class="btn btn-secondary" id="form-modal" data-toggle="modal" data-target=""></button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "argon-form.svg"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Benchmark -->
+
+                        <!-- MODALS (the different dynamic steps of the form)-->
+<!-- Global approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+  <!-- Characteristic modal -->
+  <div class="modal fade p-0" id="modalGlobal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <%= render 'forms/modal_global_characteristics', f: f %>
+  </div>
+  <!-- Metric modal -->
+  <div class="modal fade" id="modalGlobalStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <%= render 'forms/modal_global_metrics', f: f %>
+  </div>
+  <!-- Contact modal -->
+  <div class="modal fade" id="modalGlobalStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <%= render 'forms/modal_global_contacts', f: f %>
+  </div>
+<% end %>
+
+<!-- Finance approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalFinance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_finance_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalFinanceStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_finance_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalFinanceStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_finance_contacts', f: f %>
+    </div>
+<% end %>
+
+<!-- HR approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalHR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_HR_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalHRStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_HR_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalHRStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_HR_contacts', f: f %>
+    </div>
+<% end %>
+
+<!-- IT approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalIT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_IT_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalITStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_IT_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalITStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_IT_contacts', f: f %>
+    </div>
+<% end %>
+
+<!-- Sales approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalSales" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_sales_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalSalesStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_sales_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalSalesStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_sales_contacts', f: f %>
+    </div>
+<% end %>

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3> Bonjour, </h3>
+    <p>Une nouvelle demande de benchmark a été faite sur Trust&Bench. Vous trouverez les données nécessaires à la présentation dans les fichiers en pièce jointe.</p>
+    <p>Identité du prospect: <%= @collected_data.first_name %> <%= @collected_data.last_name %></p>
+    <p>Courriel: <%= @collected_data.email %></p>
+    <p>Entreprise: <%= @collected_data.company %></p>
+    <p>Poste occupé: <%= @collected_data.position %></p>
+    <footer>
+      <h4 style="margin:0;"> Cordialement,</h4>
+      <h4  style="margin:0;"> L'équipe Trust&Bench </h4>
+    </footer>
+  </body>
+</html>

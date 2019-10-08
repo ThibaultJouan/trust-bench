@@ -1,0 +1,26 @@
+<section>
+  <div class="container">
+    <div class='row' style="padding:0; margin:0; margin-top: 40px; margin-bottom: 40px;">
+      <div class='col-12'>
+        <h2>Réinitialisez votre mot de passe</h2>
+      </div>
+    </div>
+    <div class="row" style="padding-top:0;">
+      <div class="col">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-row mb-1">
+            <div class="col-6">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Courriel' %>
+            </div>
+          </div>
+          <div class="form-row mt-3">
+            <div class='col'>
+              <%= f.submit "Réinitialiser le mot de passe", class: 'btn btn-primary px-5' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
