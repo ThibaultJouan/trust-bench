@@ -26,6 +26,7 @@ class CollectedDatum < ApplicationRecord
   validates :position, 
   presence: true
   
+  
 
   def self.to_csv
     attributes = %w{approach_id kpi_id activity_id size_id value numerator denominator first_name last_name email company position created_at}

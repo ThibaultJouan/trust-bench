@@ -3,15 +3,51 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3> Bonjour, </h3>
-    <p>Une nouvelle demande de benchmark a été faite sur Trust&Bench. Vous trouverez les données nécessaires à la présentation dans les fichiers en pièce jointe.</p>
-    <p>Identité du prospect: <%= @collected_data.first_name %> <%= @collected_data.last_name %></p>
-    <p>Courriel: <%= @collected_data.email %></p>
-    <p>Entreprise: <%= @collected_data.company %></p>
-    <p>Poste occupé: <%= @collected_data.position %></p>
-    <footer>
-      <h4 style="margin:0;"> Cordialement,</h4>
-      <h4  style="margin:0;"> L'équipe Trust&Bench </h4>
-    </footer>
+   
+   <p>==Group==
+   <br/>
+   Nom: <%= @collected_data.last_name%>
+   <br/>
+   Prénom: <%= @collected_data.first_name%>
+   <br/>
+   Courriel: <%= @collected_data.email%>
+   <br/>
+   <br/>
+   ==Group==
+   <br/>
+   Entreprise: <%= @collected_data.company%>
+   <br/>
+   Fonction: <%= @collected_data.position%>
+   <br/>
+   <br/>
+   ==Group==
+   <br/>
+   Secteur: <%= @collected_data.activity.label%>
+   <br/>
+   <br/>
+   ==Group==
+   <br/>
+   Chiffre d'affaires(M€): <%= @collected_data.denominator%>
+   <br/>
+   Montant SG&A (M€): <%= @collected_data.numerator%>
+   <br/>
+   Montant G&A (M€): <%= @collected_data2.numerator%>
+   <br/>
+   Coût Fonction Finance (M€): <%= @collected_data3.numerator%>
+   <br/>
+   Coûts Informatiques (M€): <%= @collected_data4.numerator%>
+   <br/>
+   Coût Fonction Commerciale (M€): <%= @collected_data5.numerator%>
+   <br/>
+   Coût Marketing & Com. (M€): <%= @collected_data6.numerator%>
+   <br/>
+   Nombre total de salariés: <%= @collected_data7.numerator%>
+   <br/>
+   Nb d'etp de la fonction RH: <%= @collected_data7.denominator%>
+   <br/>
+   RGPD: OK</p>
+
+
+
   </body>
 </html>

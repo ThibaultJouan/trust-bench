@@ -17,13 +17,6 @@
         <div class="overflow pl-1 pr-1">
           <div class="row">
             <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
-              <%= f.label "Chiffre d'affaires (M€):"%>
-              <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
-                <i class="far fa-xs fa-question-circle qm-color"></i>
-              </button>
-              <%= f.number_field :ca_globale, class:"form-control", :tabindex => 1  %>
-            </div>
-            <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
               <%= f.label "Montant SG&A (M€):" %>
               <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Inclus les coûts Finance, Informatiques, Marketing, RH, Juridique, de Management ainsi que les coûts commerciaux.">
                 <i class="far fa-xs fa-question-circle qm-color"></i>
@@ -37,8 +30,6 @@
               </button>
               <%= f.number_field :ga, class:"form-control", :tabindex => 3  %>
             </div>
-          </div>
-          <div class="row">
             <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
               <%= f.label "Coût Fonction Finance (M€):" %>
               <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale Finance, le SI Finance, les coûts d'externalisation ainsi que les autres frais de fonctionnement.">
@@ -46,6 +37,8 @@
               </button>
               <%= f.number_field :finance_globale, class:"form-control", :tabindex => 4  %>
             </div>
+          </div>
+          <div class="row">
             <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
               <%= f.label "Coûts informatiques (M€):" %>
               <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond aux CapEx et OpEx (hors amortissements) de l'ensemble des SI.">
@@ -60,8 +53,6 @@
               </button>
               <%= f.number_field :sm, class:"form-control", :tabindex => 6  %>
             </div>
-          </div>
-          <div class="row">
             <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
               <%= f.label "Coût Marketing & Com (M€):" %>
               <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale marketing, le marketing digital, les outils, l'analytics ainsi que les diverses études marketing.">
@@ -69,13 +60,8 @@
               </button>
               <%= f.number_field :marketing, class:"form-control", :tabindex => 7  %>
             </div>
-            <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
-              <%= f.label "Nombre total de salariés:" %>
-              <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
-                <i class="far fa-xs fa-question-circle qm-color"></i>
-              </button>
-              <%= f.number_field :people, class:"form-control", :tabindex => 8  %>
-            </div>
+          </div>
+          <div class="row">
             <div class = "mt-1 col-xs-12 col-sm-4 col-md-4">
               <%= f.label "Nb d'ETP de la fonction RH:" %>
               <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ETPs RH internes et externes.">

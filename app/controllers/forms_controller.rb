@@ -22,6 +22,7 @@ class FormsController < ApplicationController
     #Approche globale
     if params[:collected_datum][:approach] == "1"
       # SG&A sur CA
+      #@collected_data_1 = CollectedDatum.new(value: params[:collected_datum][:sga].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:sga].to_f, denominator: params[:collected_datum][:ca_globale].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], ca_globale: params[:collected_datum][:ca_globale], sga: params[:collected_datum][:sga], ga: params[:collected_datum][:ga], finance: params[:collected_datum][:finance], it: params[:collected_datum][:it], sm: params[:collected_datum][:sm], marketing: params[:collected_datum][:marketing], people: params[:collected_datum][:people], rh: params[:collected_datum][:rh], rgpd: params[:collected_datum][:rgpd], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 1)
       @collected_data_1 = CollectedDatum.new(value: params[:collected_datum][:sga].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:sga].to_f, denominator: params[:collected_datum][:ca_globale].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 1)
       # G&A sur CA
       @collected_data_2 = CollectedDatum.new(value: params[:collected_datum][:ga].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:ga].to_f, denominator: params[:collected_datum][:ca_globale].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 2)
@@ -71,7 +72,7 @@ class FormsController < ApplicationController
             end
           end
 
-        AdminMailer.send_csv_attachment(@collected_data_1, @csv_export).deliver_now
+        AdminMailer.send_csv_attachment(@collected_data_1, @collected_data_2, @collected_data_3, @collected_data_4, @collected_data_5, @collected_data_6, @collected_data_7, @csv_export).deliver_now
         redirect_to root_path
         flash[:success] = "Votre demande de benchmark a bien été prise en compte"
       else

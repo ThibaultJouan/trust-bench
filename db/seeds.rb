@@ -17,26 +17,26 @@ Kpi.create!(label: "Coût fonction Commerciale sur CA");                        
 Kpi.create!(label: "Coût Marketing sur CA");
 Kpi.create!(label: "Salariés gérés par ETP RH");
 #Finance
-Kpi.create!(label: "Cout comptabilite sur CA");
-Kpi.create!(label: "Cout controle de gestion sur CA");
-Kpi.create!(label: "Proportion de clients avec un centre de service");              #10
-Kpi.create!(label: "Niveau moyen de maturite digitale finance");
+#Kpi.create!(label: "Cout comptabilite sur CA");
+#Kpi.create!(label: "Cout controle de gestion sur CA");
+#Kpi.create!(label: "Proportion de clients avec un centre de service");              #10
+#Kpi.create!(label: "Niveau moyen de maturite digitale finance");
 #RH
-Kpi.create!(label: "Nombre de fiche de paie par ETP RH");
-Kpi.create!(label: "Salaries de terrain par ETP RH");
-Kpi.create!(label: "Proportion de clients avec un centre de service partage RH");
-Kpi.create!(label: "Niveau moyen de maturite digitale RH");                         #15
+#Kpi.create!(label: "Nombre de fiche de paie par ETP RH");
+#Kpi.create!(label: "Salaries de terrain par ETP RH");
+#Kpi.create!(label: "Proportion de clients avec un centre de service partage RH");
+#Kpi.create!(label: "Niveau moyen de maturite digitale RH");                         #15
 #IT
-Kpi.create!(label: "OPEX sur CAPEX");
-Kpi.create!(label: "Salaries IT internes sur salaries IT externes");
-Kpi.create!(label: "Depenses projet sur depenses run");
-Kpi.create!(label: "Nombre de projets digitaux sur nombre total de projet");
-Kpi.create!(label: "Depenses en applicatif sur depenses en infratructure");         #20
+#Kpi.create!(label: "OPEX sur CAPEX");
+#Kpi.create!(label: "Salaries IT internes sur salaries IT externes");
+#Kpi.create!(label: "Depenses projet sur depenses run");
+#Kpi.create!(label: "Nombre de projets digitaux sur nombre total de projet");
+#Kpi.create!(label: "Depenses en applicatif sur depenses en infratructure");         #20
 #Sales
-Kpi.create!(label: "Cout marketing et communication sur CA");
-Kpi.create!(label: "Cout marketing digital sur cout marketing et communication");
-Kpi.create!(label: "ETP vendeur sedentaire sur ETP vendeurs de terrains");
-Kpi.create!(label: "Proportion de clients avec un centre de service partage ADV");
+#Kpi.create!(label: "Cout marketing et communication sur CA");
+#Kpi.create!(label: "Cout marketing digital sur cout marketing et communication");
+#Kpi.create!(label: "ETP vendeur sedentaire sur ETP vendeurs de terrains");
+#Kpi.create!(label: "Proportion de clients avec un centre de service partage ADV");
 
 
 #Aproach Creation
@@ -64,7 +64,3 @@ Size.create!(label: "CA entre 500M€ et 1Mrd€")
 Size.create!(label: "CA entre 1Mrd€ et 10Mrd€")
 Size.create!(label: "CA entre 10Mrd€ et 50Mrd€")
 Size.create!(label: "CA > 50Mrd€")
-
-#Bench Creation
-Bench.create!(median_value: "8.13%", min_value:"28.84%", max_value:"2.65%", source:"https://saibooks.com/sga-benchmarks/", kpi_id: 1, approach_id: 1, activity_id:6, size_id:4)
-Bench.create!(median_value: "17.31%", min_value:"37.88%", max_value:"7.19%", source:"https://saibooks.com/sga-benchmarks/", kpi_id: 1, approach_id: 1, activity_id:2, size_id:4)
