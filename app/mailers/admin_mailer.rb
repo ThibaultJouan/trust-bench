@@ -13,7 +13,7 @@ class AdminMailer < ApplicationMailer
     @collected_data7 = collected_data7
     @csv_export = csv_export
     attachments["#{DateTime.now.strftime("%Y%m%d")}_données_récupérées.csv"] = {mime_type: 'text/csv', content: @csv_export}
-    mail(to: "thibaultjouan@hotmail.com", subject: 'Une nouvelle demande a été faite sur Trust&Bench')
+    mail(to: "thibault.jouan@argon-consult.com", subject: 'Une nouvelle demande a été faite sur Trust&Bench')
     #mail(to: "quentin.prevost@argon-consult.com", cc: "renaud.texcier@argon-consult.com", subject: 'Une nouvelle demande a été faite sur Trust&Bench')
   end
 end
